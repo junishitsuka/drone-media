@@ -19,7 +19,9 @@ default: &default
 
 development:
   <<: *default
-  database: drone-media_development
+  database: <%= ENV["development_db_name"] || "wordpress" %>
+  username: <%= ENV["development_db_user"] || "root" %>
+  password: <%= ENV["development_db_pass"] || "" %>
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -49,6 +51,6 @@ test:
 #
 production:
   <<: *default
-  database: drone-media_production
-  username: drone-media
-  password: <%= ENV['DRONE-MEDIA_DATABASE_PASSWORD'] %>
+  database: <%= ENV["production_db_name"] || "wordpress" %>
+  username: <%= ENV["production_db_user"] || "root" %>
+  password: <%= ENV["production_db_pass"] || "" %>
