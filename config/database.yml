@@ -19,6 +19,7 @@ default: &default
 
 development:
   <<: *default
+  host: <%= ENV["development_db_host"] || "127.0.0.1" %>
   database: <%= ENV["development_db_name"] || "wordpress" %>
   username: <%= ENV["development_db_user"] || "root" %>
   password: <%= ENV["development_db_pass"] || "" %>
@@ -51,6 +52,7 @@ test:
 #
 production:
   <<: *default
+  host: <%= ENV["production_db_host"] || "127.0.0.1" %>
   database: <%= ENV["production_db_name"] || "wordpress" %>
   username: <%= ENV["production_db_user"] || "root" %>
   password: <%= ENV["production_db_pass"] || "" %>
