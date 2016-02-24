@@ -5,3 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Purpose.create([
+  {name: '企画プロモーション'},
+  {name: '記念撮影'},
+  {name: '官庁撮影'},
+  {name: 'テレビ撮影'},
+  {name: '測量'}
+])
