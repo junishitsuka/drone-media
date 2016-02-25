@@ -37,26 +37,38 @@ article {
   background-color:#fff;
   padding: 10px;
   overflow: hidden;
-}
 
-.step-title {
-  float: left;
-  margin: 4px 20px 0 0;
-  font-size: 12px;
-}
+  .message {
+    width: 65%;
+    text-align: left;
+    margin: 0;
+    float: left;
+  }
 
-.step {
-  border-radius: 50%;
-  height: 25px;
-  width: 25px;
-  border: 2px solid lightgray;
-  float: left;
-  margin: 0 2px;
-}
+  .steps {
+    width: 35%;
+    float: left;
+  }
 
-.step.selected {
-  background-color: #09C289;
-  color: #fff;
+  .step-title {
+    float: left;
+    margin: 4px 20px 0 0;
+    font-size: 12px;
+  }
+
+  .step {
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+    border: 2px solid lightgray;
+    float: left;
+    margin: 0 2px;
+  }
+
+  .step.selected {
+    background-color: #09C289;
+    color: #fff;
+  }
 }
 
 .form-body {

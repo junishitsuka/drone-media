@@ -7,42 +7,43 @@
         <div class="main-form">
           <form action="/index.php/pref/" method="POST">
             <div class="form-header">
-              <p class="col-md-8" style="text-align: left; margin: 0;">わずか１分で資料を一括請求</p>
-              <div class="col-md-4">
+              <p class="message">わずか１分で資料を一括請求</p>
+              <div style="steps">
                 <span class="step-title">STEP</span>
                 <div class="step selected">1</div>
                 <div class="step">2</div>
                 <div class="step">3</div>
-              </p></div>
-            </p></div>
+                <div class="step">4</div>
+                <div class="step">5</div>
+              </div>
+            </div>
             <div class="form-body">
               <p class="purpose"><b>撮影目的は何ですか？</b></p>
-              <div class="box-input"><input type="checkbox" name="purpose[]" id="promotion" value="promotion"><label for="promotion">企画プロモーション</label></div>
-              <div class="box-input"><input type="checkbox" name="purpose[]" id="anniversary" value="anniversary"><label for="anniversary">記念撮影</label></div>
-              <div class="box-input"><input type="checkbox" name="purpose[]" id="authorities" value="authorities"><label for="authorities">官庁撮影</label></div>
-              <div class="box-input"><input type="checkbox" name="purpose[]" id="tv" value="tv"><label for="tv">テレビ撮影</label></div>
-            </p></div>
-            <div style="text-align: center;" class="form-footer">
-              <button type="submit">次のSTEPへ&nbsp;<i class="glyphicon glyphicon-play"></i></button>
+              <% Purpose.all.each do |purpose| %>
+              <div class="box-input"><input type="checkbox" name="purpose[]" id="<%= purpose.id %>" value="<%= purpose.id %>"><label for="<%= purpose.id %>"><%= purpose.name %></label></div>
+              <% end %>
             </div>
-          </p></form>
+            <div style="text-align: center;" class="form-footer">
+              <button type="submit">
+                次のSTEPへ&nbsp;<i class="glyphicon glyphicon-play"></i>
+              </button>
+            </div>
+          </form>
         </div>
-
       </article>
-      <hr class="post-divider">
     </div>
   </div>
 </div>
-<footer>
-  <div id="footer-bottom" style="background-color: #fff;">
-    <div class="container">
-      <div class="row">
-        <div id="footer-meta" class="col-md-12">
-          <p style="float: none; text-align: center;">
-            Copyright (C) <a id="footer-site" href="http://kusatsuhikaku.com/index.php/search/" title="空撮比較.com">空撮比較.com</a> All Rights Reserved.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>
+<!-- <footer> -->
+<!--   <div id="footer&#45;bottom" style="background&#45;color: #fff;"> -->
+<!--     <div class="container"> -->
+<!--       <div class="row"> -->
+<!--         <div id="footer&#45;meta" class="col&#45;md&#45;12"> -->
+<!--           <p style="float: none; text&#45;align: center;"> -->
+<!--             Copyright (C) <a id="footer&#45;site" href="http://kusatsuhikaku.com/index.php/search/" title="空撮比較.com">空撮比較.com</a> All Rights Reserved. -->
+<!--           </p> -->
+<!--         </div> -->
+<!--       </div> -->
+<!--     </div> -->
+<!--   </div> -->
+<!-- </footer> -->
