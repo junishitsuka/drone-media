@@ -1,3 +1,102 @@
 // Place all the styles related to the Applications controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  font-family: helvetica, arial, 'hiragino kaku gothic pro', meiryo, 'ms pgothic', sans-serif;
+  background-image: image-url("background.jpg");
+  background-repeat: repeat-x;
+  background-size: cover;
+}
+
+#content {
+  background-color: transparent;
+  border: none;
+}
+
+article {
+  text-align: center;
+
+  h1 {
+    color: #fff !important;
+    margin-top: 100px !important;
+  }
+
+  h2 {
+    color: #fff !important;
+  }
+}
+
+.main-form form {
+  width: 50%;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.form-header {
+  background-color:#fff;
+  padding: 10px;
+  overflow: hidden;
+}
+
+.step-title {
+  float: left;
+  margin: 4px 20px 0 0;
+  font-size: 12px;
+}
+
+.step {
+  border-radius: 50%;
+  height: 25px;
+  width: 25px;
+  border: 2px solid lightgray;
+  float: left;
+  margin: 0 2px;
+}
+
+.step.selected {
+  background-color: #09C289;
+  color: #fff;
+}
+
+.form-body {
+  background-color: rgba(255,255,255,0.4);
+  padding-bottom: 1px;
+
+  p.purpose {
+    margin: 0;
+    padding-top: 10px;
+    color: #fff;
+  }
+
+  label {
+    line-height: 50px;
+  }
+}
+
+.box-input {
+  border: 1px solid #fff;
+  border-radius: 8px;
+  width: 80%;
+  margin: 10px auto;
+  background-color: rgba(255,255,255,0.8);
+}
+
+.form-footer {
+  background-color: #fff;
+
+  button {
+    width: 140px;
+    height: 40px;
+    background-color: #09C289;
+    margin: 10px;
+    font-size: 15px;
+    color: #fff;
+    border: 0;
+    padding: 11px 14px;
+    text-align: center;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+  }
+}
