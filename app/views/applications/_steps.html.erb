@@ -1,0 +1,10 @@
+<div style="steps">
+  <span class="step-title">STEP</span>
+  <% (1..5).each do |i| %>
+    <% if i == step %>
+      <div class="step selected"><%= i %></div>
+    <% else %>
+      <div class="step"><%= i %></div>
+    <% end %>
+  <% end %>
+</div>
