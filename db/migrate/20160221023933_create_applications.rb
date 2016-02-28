@@ -1,7 +1,7 @@
 class CreateApplications < ActiveRecord::Migration
   def change
     create_table :applications do |t|
-      t.string :pref
+      t.integer :prefecture_id
       t.string :name
       t.string :phone
       t.string :email
