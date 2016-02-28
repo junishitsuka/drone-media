@@ -1,0 +1,45 @@
+<div id="content" class="container">
+  <div class="row" role="main" >
+    <div class="col-lg-12">
+      <article id="post-11" class="post-11 page type-page status-publish hentry">
+        <h1 id="post-title">空撮比較.com</h1>
+        <h2>人気の空撮会社をご紹介</h2>
+        <div class="main-form">
+          <%= form_for(@application, url: applications_targets_path) do |f| %>
+            <div class="form-header">
+              <p class="message">わずか１分で資料を一括請求</p>
+              <%= render :partial => "steps", :locals => { step: 2 } %>
+            </div>
+            <div class="form-body">
+              <p class="purpose"><b>撮影対象は何ですか？</b></p>
+              <% Target.all.each do |target| %>
+                <div class="box-input">
+                  <%= f.check_box :target_ids, {multiple: true}, target.id, true %>
+                  <%= f.label :target_ids, target.name, :value => target.id %>
+                </div>
+              <% end %>
+            </div>
+            <div style="text-align: center;" class="form-footer">
+              <button type="submit">
+                次のSTEPへ&nbsp;<i class="glyphicon glyphicon-play"></i>
+              </button>
+            </div>
+          <% end %>
+        </div>
+      </article>
+    </div>
+  </div>
+</div>
+<!-- <footer> -->
+<!--   <div id="footer&#45;bottom" style="background&#45;color: #fff;"> -->
+<!--     <div class="container"> -->
+<!--       <div class="row"> -->
+<!--         <div id="footer&#45;meta" class="col&#45;md&#45;12"> -->
+<!--           <p style="float: none; text&#45;align: center;"> -->
+<!--             Copyright (C) <a id="footer&#45;site" href="http://kusatsuhikaku.com/index.php/search/" title="空撮比較.com">空撮比較.com</a> All Rights Reserved. -->
+<!--           </p> -->
+<!--         </div> -->
+<!--       </div> -->
+<!--     </div> -->
+<!--   </div> -->
+<!-- </footer> -->

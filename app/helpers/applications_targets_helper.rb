@@ -1,0 +1,2 @@
+module ApplicationsTargetsHelper
+end

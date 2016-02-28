@@ -2,6 +2,9 @@ Rails.application.routes.draw do
 
   resources :applications, only: %i(new create edit update show)
 
+  get 'applications/:id/target' => 'applications#target', as: 'applications_target'
+  post 'applications/targets' => 'applications#targets'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
