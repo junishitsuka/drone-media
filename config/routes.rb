@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :applications, only: %i(new create)
+  resources :applications, only: %i(new create edit update show)
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
