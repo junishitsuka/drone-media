@@ -26,6 +26,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # additional
 gem 'figaro'
 gem 'rails_config'
+gem 'activerecord-import'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

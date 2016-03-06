@@ -5,16 +5,17 @@
         <h1 id="post-title">空撮比較.com</h1>
         <h2>人気の空撮会社をご紹介</h2>
         <div class="main-form">
-          <%= form_for @application do |f| %>
+          <%= form_for([@application, @application_target]) do |f| %>
             <div class="form-header">
               <p class="message">わずか１分で資料を一括請求</p>
-              <%= render :partial => "steps", :locals => { step: 1 } %>
+              <%= render :partial => "layouts/steps", :locals => { step: 2 } %>
             </div>
             <div class="form-body">
-              <p class="purpose"><b>撮影目的は何ですか？</b></p>
-              <%= f.collection_check_boxes :application_purposes, Purpose.all, :id, :name do |c| %>
+              <p class="purpose"><b>撮影対象は何ですか？</b></p>
+              <% Target.all.each do |target| %>
                 <div class="box-input">
-                  <%= c.label { c.check_box + c.text } %>
+                  <%= f.check_box :target_id, {multiple: true}, target.id, true %>
+                  <%= f.label :target_id, target.name, :value => target.id %>
                 </div>
               <% end %>
             </div>

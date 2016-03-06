@@ -8,7 +8,7 @@
           <%= form_for(@application, url: applications_path) do |f| %>
             <div class="form-header">
               <p class="message">わずか１分で資料を一括請求</p>
-              <%= render :partial => "steps", :locals => { step: 1 } %>
+              <%= render :partial => "layouts/steps", :locals => { step: 1 } %>
             </div>
             <div class="form-body">
               <p class="purpose"><b>撮影目的は何ですか？</b></p>

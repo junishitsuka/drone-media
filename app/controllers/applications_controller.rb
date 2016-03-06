@@ -1,36 +1,30 @@
 class ApplicationsController < ApplicationController
-  before_action :set_application, only: [:target, :targets]
+  before_action :set_application, only: [:edit]
 
   def new
     @application = Application.new
   end
 
   def create
+    # Applicationレコードを作成
     @application = Application.create
+
+    # ApplicationPurposeレコードをBULK INSERT
+    application_purposes = []
     application_params["purpose_ids"].each do |purpose_id|
       if purpose_id.to_i > 0
-        ApplicationPurpose.create(
+        application_purposes << ApplicationPurpose.new(
           application_id: @application.id,
           purpose_id: purpose_id.to_i
         )
       end
     end
-    redirect_to applications_target_url(id: @application.id)
-  end
+    ApplicationPurpose.import application_purposes
 
-  def target
-  end
-
-  def targets
-    application_params["target_ids"].each do |target_id|
-      if target_id.to_i > 0
-        ApplicationTarget.create(
-          application_id: @application.id,
-          target_id: target_id.to_i
-        )
-      end
-    end
-    redirect_to edit_application_path(@application)
+    # 対象フォームへリダイレクト
+    redirect_to new_application_application_target_url(
+      application_id: @application.id
+    )
   end
 
   def edit
@@ -43,14 +37,13 @@ class ApplicationsController < ApplicationController
   end
 
   private
-    def application_params
-      params.require(:application).permit(
-        {:purpose_ids => []},
-        {:target_ids => []},
-      )
-    end
+  def set_application
+    @application = Application.find(params[:id])
+  end
 
-    def set_application
-      @application = Application.find(params[:id])
-    end
+  def application_params
+    params.require(:application).permit(
+      {:purpose_ids => []}
+    )
+  end
 end
